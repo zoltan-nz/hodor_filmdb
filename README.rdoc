@@ -4,5 +4,8 @@
     cd hodor_filmdb
     bundle install
     rake db:create
+
+Migration and sample data from seed file:
+
     rake db:reset
     rails s
