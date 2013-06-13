@@ -1,8 +1,8 @@
 == Install
 
-* git clone git@github.com:szines/hodor_filmdb.git
-* cd hodor_filmdb
-* bundle install
-* rake db:create
-* rake db:reset
-* rails s
+    git clone git@github.com:szines/hodor_filmdb.git
+    cd hodor_filmdb
+    bundle install
+    rake db:create
+    rake db:reset
+    rails s
