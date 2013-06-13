@@ -1,0 +1,31 @@
+<h1>Listing roleships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Film</th>
+      <th>Role</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roleships.each do |roleship| %>
+      <tr>
+        <td><%= roleship.participant_id %></td>
+        <td><%= roleship.film_id %></td>
+        <td><%= roleship.role_id %></td>
+        <td><%= link_to 'Show', roleship %></td>
+        <td><%= link_to 'Edit', edit_roleship_path(roleship) %></td>
+        <td><%= link_to 'Destroy', roleship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roleship', new_roleship_path %>

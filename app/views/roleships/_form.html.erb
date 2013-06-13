@@ -1,0 +1,29 @@
+<%= form_for(@roleship) do |f| %>
+  <% if @roleship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@roleship.errors.count, "error") %> prohibited this roleship from being saved:</h2>
+
+      <ul>
+      <% @roleship.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :participant %><br>
+    <%= f.text_field :participant %>
+  </div>
+  <div class="field">
+    <%= f.label :film %><br>
+    <%= f.text_field :film %>
+  </div>
+  <div class="field">
+    <%= f.label :role %><br>
+    <%= f.text_field :role %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

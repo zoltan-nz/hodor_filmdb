@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @roleship.participant %>
+</p>
+
+<p>
+  <strong>Film:</strong>
+  <%= @roleship.film %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @roleship.role %>
+</p>
+
+<%= link_to 'Edit', edit_roleship_path(@roleship) %> |
+<%= link_to 'Back', roleships_path %>
