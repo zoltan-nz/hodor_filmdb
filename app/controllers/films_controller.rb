@@ -16,7 +16,7 @@ class FilmsController < ApplicationController
   # GET /films/new
   def new
     @film = Film.new
-
+    @film.roleships.build.build_participant
   end
 
   # GET /films/1/edit
@@ -71,7 +71,7 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:title, :participant_ids, :role_ids)
+      params.require(:film).permit(:title, :participant_ids, :role_ids, :roleships => [:participants => [:name]])
     end
 
     def set_joins

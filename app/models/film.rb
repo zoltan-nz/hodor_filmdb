@@ -1,11 +1,10 @@
 class Film < ActiveRecord::Base
-  has_many :roleships
+  has_many :roleships, inverse_of: :film
   has_many :participants, through: :roleships
   has_many :roles, through: :roleships
 
-  def writers
-
-  end
+  accepts_nested_attributes_for :roleships
+  accepts_nested_attributes_for :participants
 
   def writers=(participant)
     @writer_role = Role.find(1)

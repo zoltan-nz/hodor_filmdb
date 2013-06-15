@@ -1,0 +1,23 @@
+= form_for @film do |f|
+  - if @film.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@film.errors.count, "error")
+        prohibited this film from being saved:
+      %ul
+        - @film.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label 'Title of the film: '
+    = f.text_field :title
+  -#.field
+  -#  = f.label :participants
+  -#  = f.select :participant_ids, options_from_collection_for_select(Participant.all, :id, :name)
+  -#  = f.label :roles
+  -#  = f.select :role_ids, options_from_collection_for_select(Role.all, :id, :name)
+  = f.fields_for :roleships do |roleship_form|
+    = roleship_form.fields_for :participants do |participant_form|
+      = participant_form.label 'Participant name: '
+      = participant_form.text_field :name
+  .actions
+    = f.submit

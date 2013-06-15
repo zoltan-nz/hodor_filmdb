@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '4.0.0.rc2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -43,3 +43,27 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'haml-rails'
+gem 'puma'
+
+
+group :development do
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'debugger'
+  gem 'quiet_assets'
+  gem 'bullet'
+  gem 'letter_opener'
+
+  # For coffeescript debugging
+  gem 'coffee-rails-source-maps'
+
+  gem 'hirb'
+  gem 'binding_of_caller'
+  gem 'awesome_print'
+
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'meta_request'
+end

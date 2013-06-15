@@ -4,6 +4,8 @@ class CreateRoleships < ActiveRecord::Migration
       t.belongs_to :participant, index: true
       t.belongs_to :film, index: true
       t.belongs_to :role, index: true
+      t.integer    :sort_order
+      t.boolean    :is_owner
 
       t.timestamps
     end
