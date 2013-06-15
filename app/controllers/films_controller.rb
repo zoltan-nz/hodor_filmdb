@@ -71,7 +71,7 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:title, :participant_ids, :role_ids, :roleships => [:participants => [:name]])
+      params.require(:film).permit(:title, :participant_ids, :role_ids, :roleships_attributes => [:participant_attributes => [:name]])
     end
 
     def set_joins
