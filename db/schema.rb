@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20130613054458) do
     t.integer  "participant_id"
     t.integer  "film_id"
     t.integer  "role_id"
+    t.integer  "sort_order"
+    t.boolean  "is_owner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

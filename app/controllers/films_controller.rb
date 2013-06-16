@@ -16,11 +16,16 @@ class FilmsController < ApplicationController
   # GET /films/new
   def new
     @film = Film.new
-    @film.roleships.build.build_participant
+    @participants.each do |p|
+        @film.roleships.build(participant_id: p.id)
+    end
   end
 
   # GET /films/1/edit
   def edit
+    @participants.each do |p|
+      @film.roleships.build(participant_id: p.id)
+    end
   end
 
   # POST /films
@@ -71,7 +76,7 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:title, :participant_ids, :role_ids, :roleships_attributes => [:participant_attributes => [:name]])
+      params.require(:film).permit(:title, :participant_ids, :role_ids, :roleships_attributes => [:is_owner, :sort_order, :participant_attributes => [:name]])
     end
 
     def set_joins

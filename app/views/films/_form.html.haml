@@ -16,8 +16,12 @@
   -#  = f.label :roles
   -#  = f.select :role_ids, options_from_collection_for_select(Role.all, :id, :name)
   = f.fields_for :roleships do |roleship_form|
-    = roleship_form.fields_for :participant do |participant_form|
-      = participant_form.label 'Participant name: '
-      = participant_form.text_field :name
+    = participant = Participant.where(id: roleship_form.object.participant_id).first.name
+    = roleship_form.check_box :participant_id
+    = roleship_form.label 'Is owner?'
+    = roleship_form.check_box :is_owner
+    = roleship_form.label 'Sort order'
+    = roleship_form.text_field :sort_order
+
   .actions
     = f.submit
