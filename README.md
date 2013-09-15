@@ -9,3 +9,7 @@ Migration and sample data from seed file:
 
     rake db:reset
     rails s
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/szines/hodor_filmdb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
